@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f6fd;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.clock-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 2rem;
+}
+
+.clock-face {
+    display: flex;
+    align-items: center;
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.digit {
+    font-size: clamp(56px, 12vw, 96px);
+    font-weight: 500;
+    font-family: 'Courier New', monospace;
+    color: #185FA5;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.sep {
+    font-size: clamp(48px, 10vw, 80px);
+    font-weight: 400;
+    font-family: 'Courier New', monospace;
+    color: #85B7EB;
+    line-height: 1;
+    padding: 0 4px;
+    align-self: flex-start;
+    margin-top: 4px;
+    transition: opacity 0.1s;
+}
+
+.unit-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #378ADD;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+
+.ampm-badge {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0C447C;
+    background: #E6F1FB;
+    border: 1px solid #85B7EB;
+    border-radius: 8px;
+    padding: 6px 16px;
+    align-self: flex-end;
+    margin-bottom: 10px;
+    margin-left: 12px;
+}
+
+.date-line {
+    font-size: 14px;
+    color: #378ADD;
+    letter-spacing: 0.06em;
+}
+
+.tick-bar {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.tick {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #B5D4F4;
+    transition: background 0.15s;
+}
+
+.tick.active {
+    background: #185FA5;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #042C53;
+    }
+
+    .digit {
+        color: #85B7EB;
+    }
+
+    .sep {
+        color: #378ADD;
+    }
+
+    .unit-label {
+        color: #B5D4F4;
+    }
+
+    .ampm-badge {
+        color: #B5D4F4;
+        background: #0C447C;
+        border-color: #185FA5;
+    }
+
+    .date-line {
+        color: #85B7EB;
+    }
+
+    .tick {
+        background: #185FA5;
+    }
+
+    .tick.active {
+        background: #85B7EB;
+    }
+}
