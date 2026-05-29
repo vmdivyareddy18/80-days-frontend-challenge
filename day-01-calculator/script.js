@@ -85,6 +85,7 @@ function calculate() {
         resultEl.textContent = 'Error';
         setTimeout(clearAll, 1000);
     }
+    
 }
 
 function clearAll() {
