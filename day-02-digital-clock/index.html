@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="clock-wrap">
+        <div class="clock-face">
+            <div class="time-block">
+                <span class="digit" id="hh">12</span>
+                <span class="unit-label">hours</span>
+            </div>
+
+            <span class="sep" id="colon1">:</span>
+
+            <div class="time-block">
+                <span class="digit" id="mm">00</span>
+                <span class="unit-label">minutes</span>
+            </div>
+
+            <span class="sep" id="colon2">:</span>
+
+            <div class="time-block">
+                <span class="digit" id="ss">00</span>
+                <span class="unit-label">seconds</span>
+            </div>
+
+            <span class="ampm-badge" id="ampm">AM</span>
+        </div>
+
+        <div class="date-line" id="dateline"></div>
+
+        <div class="tick-bar" id="ticks">
+            <div class="tick"></div>
+            <div class="tick"></div>
+            <div class="tick"></div>
+            <div class="tick"></div>
+            <div class="tick"></div>
+            <div class="tick"></div>
+            <div class="tick"></div>
+            <div class="tick"></div>
+            <div class="tick"></div>
+            <div class="tick"></div>
+            <div class="tick"></div>
+            <div class="tick"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
