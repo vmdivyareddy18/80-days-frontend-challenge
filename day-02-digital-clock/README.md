@@ -21,7 +21,7 @@ A responsive Digital Clock built using HTML, CSS, and JavaScript as part of my *
 - Responsive Styling
 
 ## 📸 Preview
-
+![Project Screenshot](screenshot.png)
 
 ## 🔥 80 Days Coding Challenge
 Day 2/80 Completed ✅
