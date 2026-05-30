@@ -131,6 +131,8 @@ function copyHex() {
     setTimeout(() => toast.classList.remove('show'), 1200);
 }
 
+
+
 // ── Init ──────────────────────────────────────────────────────
 applyColor('#1A73E8', false);
 
