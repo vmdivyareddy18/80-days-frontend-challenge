@@ -69,22 +69,7 @@ Only meaningful work ✅
 
 ---
 
-## 📅 Progress Tracker
 
-| Day | Project | Status |
-|------|----------|----------|
-| Day 1 | Contact Form | ⬜ |
-| Day 2 | Digital Clock | ⬜ |
-| Day 3 | Calculator | ⬜ |
-| Day 4 | BMI Calculator | ⬜ |
-| Day 5 | Counter App | ⬜ |
-| Day 6 | Color Flipper | ⬜ |
-| Day 7 | FAQ Accordion | ⬜ |
-| Day 8 | Dark Mode Toggle | ⬜ |
-| Day 9 | Countdown Timer | ⬜ |
-| Day 10 | Form Validator | ⬜ |
-
----
 
 
 
