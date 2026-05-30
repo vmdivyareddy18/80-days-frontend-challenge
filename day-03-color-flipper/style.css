@@ -1,0 +1,234 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Syne', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    transition: background 0.6s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ── Layout ── */
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    width: 100%;
+    max-width: 480px;
+}
+
+/* ── Top label ── */
+.top-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    transition: color 0.5s;
+}
+
+/* ── Swatch ── */
+.color-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.color-swatch {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+    transition: background 0.5s cubic-bezier(.4, 0, .2, 1);
+}
+
+.color-swatch.pulse {
+    animation: swatch-pop 0.35s cubic-bezier(.4, 0, .2, 1);
+}
+
+@keyframes swatch-pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.14);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ── Hex code ── */
+.color-code-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+    padding: 8px 22px 8px 16px;
+    cursor: pointer;
+    transition: background 0.3s, border 0.4s;
+}
+
+.color-code-wrap:hover {
+    background: rgba(255, 255, 255, 0.28);
+}
+
+#color-code {
+    font-family: 'Space Mono', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    transition: color 0.4s;
+}
+
+.copy-icon {
+    font-size: 18px;
+    opacity: 0.65;
+    transition: opacity 0.2s;
+}
+
+.copy-icon:hover {
+    opacity: 1;
+}
+
+#copy-toast {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    height: 16px;
+}
+
+#copy-toast.show {
+    opacity: 0.75;
+}
+
+/* ── RGB pills ── */
+.rgb-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.rgb-pill {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    transition: color 0.4s, background 0.4s, border-color 0.4s;
+    letter-spacing: 0.04em;
+}
+
+/* ── Flip button ── */
+#flip-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 36px;
+    margin-top: 0.5rem;
+    background: rgba(255, 255, 255, 0.18);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 999px;
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.15s, border-color 0.3s, color 0.4s;
+}
+
+#flip-btn:hover {
+    background: rgba(255, 255, 255, 0.32);
+    transform: scale(1.04);
+}
+
+#flip-btn:active {
+    transform: scale(0.97);
+}
+
+.btn-icon {
+    font-size: 20px;
+}
+
+/* ── History ── */
+.history-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.history-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    transition: color 0.4s;
+}
+
+.history-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hist-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.hist-dot:hover {
+    transform: scale(1.18);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.22);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    .app {
+        padding: 2rem 1rem;
+    }
+
+    #color-code {
+        font-size: 18px;
+    }
+
+    .color-swatch {
+        width: 90px;
+        height: 90px;
+    }
+}
