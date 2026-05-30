@@ -31,20 +31,25 @@
 
             <span id="copy-toast">Copied!</span>
 
-
-
-            <button id="flip-btn" onclick="flipColor()">
-                <i class="ti ti-refresh btn-icon"></i>
-                Flip Color
-            </button>
-
-            <div class="history-section">
-                <span class="history-label" id="hist-label">recent</span>
-                <div class="history-row" id="history-row"></div>
+            <div class="rgb-row">
+                <span class="rgb-pill" id="r-pill">R: 26</span>
+                <span class="rgb-pill" id="g-pill">G: 115</span>
+                <span class="rgb-pill" id="b-pill">B: 232</span>
             </div>
         </div>
 
-        <script src="script.js"></script>
+        <button id="flip-btn" onclick="flipColor()">
+            <i class="ti ti-refresh btn-icon"></i>
+            Flip Color
+        </button>
+
+        <div class="history-section">
+            <span class="history-label" id="hist-label">recent</span>
+            <div class="history-row" id="history-row"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
