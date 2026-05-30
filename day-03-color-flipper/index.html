@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Flipper</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+        <span class="top-label" id="top-label">color flipper</span>
+
+        <div class="color-display">
+            <div class="color-swatch" id="swatch"></div>
+
+            <div class="color-code-wrap" onclick="copyHex()" title="Copy hex code">
+                <span id="color-code">#1A73E8</span>
+                <i class="ti ti-copy copy-icon"></i>
+            </div>
+
+            <span id="copy-toast">Copied!</span>
+
+            <div class="rgb-row">
+                <span class="rgb-pill" id="r-pill">R: 26</span>
+                <span class="rgb-pill" id="g-pill">G: 115</span>
+                <span class="rgb-pill" id="b-pill">B: 232</span>
+            </div>
+        </div>
+
+        <button id="flip-btn" onclick="flipColor()">
+            <i class="ti ti-refresh btn-icon"></i>
+            Flip Color
+        </button>
+
+        <div class="history-section">
+            <span class="history-label" id="hist-label">recent</span>
+            <div class="history-row" id="history-row"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
