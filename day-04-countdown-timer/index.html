@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+    <div class="card">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Countdown Timer</title>
+        <h1>&#x23F1; Countdown Timer</h1>
+
+        <div id="doneBanner">&#x1F514; Time&rsquo;s up!</div>
+
+        <div class="display">
+            <div class="digit-block">
+                <div class="digit" id="dispH">00</div>
+                <div class="digit-label">Hours</div>
+            </div>
+            <div class="sep">:</div>
+            <div class="digit-block">
+                <div class="digit" id="dispM">00</div>
+                <div class="digit-label">Minutes</div>
+            </div>
+            <div class="sep">:</div>
+            <div class="digit-block">
+                <div class="digit" id="dispS">00</div>
+                <div class="digit-label">Seconds</div>
+            </div>
+        </div>
+
+        <div class="inputs">
+            <div class="input-group">
+                <label for="inputH">Hours</label>
+                <input type="number" id="inputH" min="0" max="99" value="0" placeholder="0" />
+            </div>
+            <div class="input-group">
+                <label for="inputM">Minutes</label>
+                <input type="number" id="inputM" min="0" max="59" value="0" placeholder="0" />
+            </div>
+            <div class="input-group">
+                <label for="inputS">Seconds</label>
+                <input type="number" id="inputS" min="0" max="59" value="0" placeholder="0" />
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="btnStart" onclick="startTimer()">&#9654; Start</button>
+            <button id="btnPause" onclick="pauseTimer()" disabled>&#9646;&#9646; Pause</button>
+            <button id="btnReset" onclick="resetTimer()">&#8635; Reset</button>
+        </div>
+
+        <div class="alarm-row">
+            <input type="checkbox" id="alarmCheck" checked />
+            <label for="alarmCheck">&#128276; Play alarm when done</label>
+        </div>
+    </div>
