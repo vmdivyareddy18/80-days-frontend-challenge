@@ -132,5 +132,5 @@ function startTimer() {
     }
 
     updateDisplay(0);
-
+}
 
