@@ -18,6 +18,7 @@ function updateDisplay(secs) {
     dispS.textContent = pad(secs % 60);
 }
 
+
 function getInputSeconds() {
     const h = parseInt(document.getElementById('inputH').value) || 0;
     const m = parseInt(document.getElementById('inputM').value) || 0;
