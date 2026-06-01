@@ -8,7 +8,107 @@
 </head>
 
 <body>
+    <div class="card">
+        <h1>BMI Calculator</h1>
+        <p class="subtitle">Body Mass Index — based on height and weight.</p>
 
+        <div class="unit-toggle">
+            <button class="unit-btn active" id="btn-metric" onclick="setUnit('metric')">Metric</button>
+            <button class="unit-btn" id="btn-imperial" onclick="setUnit('imperial')">Imperial</button>
+        </div>
+
+        <div class="fields">
+            <!-- Metric Height -->
+            <div class="field" id="field-height-metric">
+                <label>Height</label>
+                <div class="input-row">
+                    <input type="number" id="height-cm" placeholder="175" min="50" max="280" />
+                    <span class="unit-label">cm</span>
+                </div>
+            </div>
+
+            <!-- Imperial Height -->
+            <div class="field" id="field-height-imperial" style="display:none">
+                <label>Height</label>
+                <div class="input-row">
+                    <input type="number" id="height-ft" class="small" placeholder="5" min="1" max="9" />
+                    <span class="unit-label">ft</span>
+                    <input type="number" id="height-in" class="small" placeholder="9" min="0" max="11" />
+                    <span class="unit-label">in</span>
+                </div>
+            </div>
+
+            <!-- Metric Weight -->
+            <div class="field" id="field-weight-metric">
+                <label>Weight</label>
+                <div class="input-row">
+                    <input type="number" id="weight-kg" placeholder="70" min="10" max="500" />
+                    <span class="unit-label">kg</span>
+                </div>
+            </div>
+
+            <!-- Imperial Weight -->
+            <div class="field" id="field-weight-imperial" style="display:none">
+                <label>Weight</label>
+                <div class="input-row">
+                    <input type="number" id="weight-lbs" placeholder="154" min="22" max="1100" />
+                    <span class="unit-label">lbs</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="error" id="err-msg">⚠️ Please enter valid height and weight values.</p>
+
+        <button class="calc-btn" onclick="calculate()">Calculate BMI</button>
+
+        <div class="result-card" id="result-card">
+            <div class="bmi-row">
+                <span class="bmi-number" id="bmi-val">—</span>
+                <span class="bmi-unit">BMI</span>
+            </div>
+            <div class="bmi-category" id="bmi-cat"></div>
+
+            <!-- Gauge -->
+            <div>
+                <div class="gauge-track">
+                    <div class="gauge-seg" style="background:#6ea8d8; flex:2"></div>
+                    <div class="gauge-seg" style="background:#4ade80; flex:2.5"></div>
+                    <div class="gauge-seg" style="background:#facc15; flex:2.5"></div>
+                    <div class="gauge-seg" style="background:#f87171; flex:3"></div>
+                </div>
+                <div class="marker-row">
+                    <span class="bmi-marker" id="bmi-marker">▲</span>
+                </div>
+                <div class="gauge-labels">
+                    <span class="gauge-label">15</span>
+                    <span class="gauge-label">18.5</span>
+                    <span class="gauge-label">25</span>
+                    <span class="gauge-label">30</span>
+                    <span class="gauge-label">45</span>
+                </div>
+            </div>
+
+            <!-- Detail Cards -->
+            <div class="detail-grid">
+                <div class="detail-box">
+                    <div class="dlabel">Category</div>
+                    <div class="dval" id="d-cat">—</div>
+                </div>
+                <div class="detail-box">
+                    <div class="dlabel">Healthy Range</div>
+                    <div class="dval">18.5 – 24.9</div>
+                </div>
+                <div class="detail-box">
+                    <div class="dlabel">Your BMI</div>
+                    <div class="dval" id="d-bmi">—</div>
+                </div>
+                <div class="detail-box">
+                    <div class="dlabel">Status</div>
+                    <div class="dval" id="d-status">—</div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 
