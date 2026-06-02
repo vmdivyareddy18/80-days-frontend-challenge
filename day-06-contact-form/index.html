@@ -2,29 +2,90 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 </head>
 
 <body>
 
-    <div class="container">
-        <form id="contactForm">
-            <h2>Contact Us</h2>
+    <div class="card" role="main">
+        <div class="header">
+            <p class="eyebrow">Get in touch</p>
+            <h1 class="title">Say <em>hello</em>,<br>we'd love to hear from you</h1>
+            <p class="subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+        </div>
 
-            <input type="text" id="name" placeholder="Your Name" required>
+        <form id="contactForm" novalidate>
 
-            <input type="email" id="email" placeholder="Your Email" required>
+            <div class="field-row">
+                <div class="field" id="field-fname">
+                    <label for="fname">First name</label>
+                    <input type="text" id="fname" placeholder="Alex" autocomplete="given-name" />
+                    <span class="error-msg">Please enter your first name</span>
+                </div>
+                <div class="field" id="field-lname">
+                    <label for="lname">Last name</label>
+                    <input type="text" id="lname" placeholder="Johnson" autocomplete="family-name" />
+                    <span class="error-msg">Please enter your last name</span>
+                </div>
+            </div>
 
-            <textarea id="message" placeholder="Your Message" required></textarea>
+            <div class="field" id="field-email">
+                <label for="email">Email address</label>
+                <input type="email" id="email" placeholder="alex@example.com" autocomplete="email" />
+                <span class="error-msg">Please enter a valid email address</span>
+            </div>
 
-            <button type="submit">Send Message</button>
+            <div class="field" id="field-subject">
+                <label for="subject">Subject</label>
+                <select id="subject">
+                    <option value="">Select a topic…</option>
+                    <option>General inquiry</option>
+                    <option>Project collaboration</option>
+                    <option>Support request</option>
+                    <option>Partnership</option>
+                    <option>Other</option>
+                </select>
+                <span class="error-msg">Please select a subject</span>
+            </div>
+
+            <div class="field" id="field-message">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Tell us what's on your mind…" maxlength="500"></textarea>
+                <div class="char-count" id="charCount">0 / 500</div>
+                <span class="error-msg">Please write a message (at least 20 characters)</span>
+            </div>
+
+            <hr />
+
+            <div class="bottom-row">
+                <span class="privacy-note">
+                    <i class="ti ti-lock" aria-hidden="true"></i>
+                    Your data is safe with us
+                </span>
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Send message <i class="ti ti-arrow-right" aria-hidden="true"></i>
+                </button>
+            </div>
+
         </form>
-    </div>
 
-    <script src="script.js"></script>
+        <div class="success-msg" id="successMsg">
+            <div class="check-circle">
+                <i class="ti ti-check" aria-hidden="true"></i>
+            </div>
+            <h3>Message sent!</h3>
+            <p>Thanks for reaching out. We'll be in touch soon.</p>
+            <button class="reset-btn" id="resetBtn">Send another message</button>
+        </div>
+    </div>
 </body>
 
 </html>
