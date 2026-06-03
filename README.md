@@ -107,5 +107,5 @@ At the end of this challenge, I will build a **final portfolio website** showcas
 </p>
 
 <p align="center">
-Day 6/80 🚀
+Day 8/80 🚀
 </p>
