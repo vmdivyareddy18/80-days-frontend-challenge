@@ -25,8 +25,5 @@ A responsive **Contact Form** built using **HTML, CSS, and JavaScript** as part 
 ## 🎯 Project Goal
 To practice building responsive forms and improve frontend development skills.
 
-## 🔗 Live Demo
-Coming Soon...
-
 ## 💻 Part of
 **80 Days Coding Challenge 🚀**
