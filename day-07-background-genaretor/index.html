@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Generator</title>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>Background Generator</h1>
+
+    <div class="layout">
+        <div class="controls">
+
+            <div>
+                <div class="section-label">Pattern</div>
+                <div class="pill-row" id="pattern-pills">
+                    <span class="pill active" data-v="waves">Waves</span>
+                    <span class="pill" data-v="particles">Particles</span>
+                    <span class="pill" data-v="grid">Grid</span>
+                    <span class="pill" data-v="blobs">Blobs</span>
+                    <span class="pill" data-v="noise">Noise</span>
+                    <span class="pill" data-v="lines">Lines</span>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-label">Colors</div>
+                <div class="row"><label>Background</label><input type="color" id="c-bg" value="#0f0c29"></div>
+                <div class="row"><label>Accent</label><input type="color" id="c-ac" value="#8a6fff"></div>
+                <div class="row"><label>Secondary</label><input type="color" id="c-s2" value="#00d4aa"></div>
+            </div>
+
+            <div>
+                <div class="section-label">Speed</div>
+                <div class="speed-row" id="speed-btns">
+                    <button class="speed-btn" data-v="0">Pause</button>
+                    <button class="speed-btn active" data-v="1">Normal</button>
+                    <button class="speed-btn" data-v="2">Fast</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-label">Density</div>
+                <div class="row">
+                    <input type="range" min="1" max="10" value="5" step="1" id="density">
+                    <span id="density-out">5</span>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-label">Size</div>
+                <div class="row">
+                    <input type="range" min="1" max="10" value="5" step="1" id="size">
+                    <span id="size-out">5</span>
+                </div>
+            </div>
+
+            <button class="dl-btn" id="dl-btn">⬇ Download PNG</button>
+
+        </div>
+
+        <div class="canvas-wrap">
+            <canvas id="bg-canvas" width="800" height="450"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
