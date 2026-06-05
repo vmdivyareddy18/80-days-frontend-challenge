@@ -8,4 +8,106 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&display=swap"
         rel="stylesheet" />
-    <style>
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- MASTHEAD -->
+        <header class="masthead">
+            <h1 class="masthead-title">Age<br>Calculator</h1>
+            <div class="masthead-meta">
+                <span id="today-date"></span><br>
+                Time &amp; Life<br>Vol. I
+            </div>
+        </header>
+
+        <!-- INPUT -->
+        <div class="input-section">
+            <div>
+                <label class="field-label" for="dob">Date of Birth</label>
+                <input type="date" id="dob" class="date-input" />
+            </div>
+            <button class="calc-btn" onclick="calculate()">Calculate →</button>
+        </div>
+
+        <!-- PLACEHOLDER -->
+        <div id="placeholder" class="placeholder">
+            <p class="placeholder-title">Enter your birth date</p>
+            <p class="placeholder-sub">Your life in numbers awaits</p>
+        </div>
+
+        <!-- RESULTS -->
+        <div id="results">
+
+            <!-- HERO -->
+            <div class="hero-stat">
+                <div class="hero-left">
+                    <p class="hero-eyebrow">You are</p>
+                    <div class="hero-number" id="hero-years">—</div>
+                    <p class="hero-unit">years old</p>
+                    <p class="hero-sub" id="hero-exact">—</p>
+                </div>
+                <div class="hero-right">
+                    <div>
+                        <div class="accent-tag">Born on a</div>
+                        <div class="born-day" id="born-day">—</div>
+                        <div class="born-details" id="born-details">—</div>
+                    </div>
+                    <div class="bday-countdown" id="bday-countdown">—</div>
+                </div>
+            </div>
+
+            <!-- STATS -->
+            <p class="section-head">Time lived in numbers</p>
+            <div class="stats-grid">
+                <div class="stat-cell">
+                    <div class="stat-num" id="stat-months">—</div>
+                    <div class="stat-label">Months</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-num" id="stat-weeks">—</div>
+                    <div class="stat-label">Weeks</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-num" id="stat-days">—</div>
+                    <div class="stat-label">Days</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-num" id="stat-hours">—</div>
+                    <div class="stat-label">Hours</div>
+                </div>
+            </div>
+
+            <!-- YEAR PROGRESS -->
+            <div class="progress-section">
+                <div class="progress-row">
+                    <span id="year-label">Year 2025</span>
+                    <span id="year-pct">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="year-bar"></div>
+                </div>
+            </div>
+
+            <!-- MILESTONES -->
+            <div class="milestones-section">
+                <p class="section-head">Life milestones</p>
+                <table class="milestone-table">
+                    <thead>
+                        <tr>
+                            <th>Age</th>
+                            <th>Milestone</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="milestone-body"></tbody>
+                </table>
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="footer" id="footer-date">Age Calculator &nbsp;·&nbsp; <span></span></footer>
+        </div>
+
+    </div>
