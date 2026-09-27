@@ -26,4 +26,9 @@ public final class BmiCalculator {
 
     private record BmiResult(double bmi, Category category) {
     }
+
+    private static double calculateMetric(double heightCentimeters, double weightKilograms) {
+        double heightMeters = heightCentimeters * METERS_PER_CENTIMETER;
+        return weightKilograms / (heightMeters * heightMeters);
+    }
 }
