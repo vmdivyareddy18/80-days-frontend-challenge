@@ -45,6 +45,18 @@ public final class BmiCalculator {
         if (!Double.isFinite(height) || !Double.isFinite(weight) || weight <= 0) {
             throw new IllegalArgumentException("Height and weight must be valid numbers.");
         }
+
+        if (unit == Unit.METRIC && (height < MIN_METRIC_HEIGHT_CENTIMETERS
+                || height > MAX_METRIC_HEIGHT_CENTIMETERS
+                || weight < MIN_WEIGHT || weight > MAX_WEIGHT)) {
+            throw new IllegalArgumentException("Metric height must be 50-280 cm and weight 10-500 kg.");
+        }
+
+        if (unit == Unit.IMPERIAL && (height < MIN_IMPERIAL_HEIGHT_INCHES
+                || height > MAX_IMPERIAL_HEIGHT_INCHES
+                || weight < MIN_WEIGHT || weight > MAX_WEIGHT)) {
+            throw new IllegalArgumentException("Imperial height must be 20-111 inches and weight 10-500 kg.");
+        }
     }
 
     private static Category determineCategory(double bmi) {
