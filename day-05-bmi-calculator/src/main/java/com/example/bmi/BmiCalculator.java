@@ -71,4 +71,17 @@ public final class BmiCalculator {
     private static String formatResult(BmiResult result) {
         return String.format(Locale.ROOT, "BMI: %.1f%nCategory: %s%n", result.bmi(), result.category());
     }
+
+    private static BmiResult parseArguments(String[] args) {
+        if (args.length == 3 && args[0].equalsIgnoreCase("metric")) {
+            return calculate(Double.parseDouble(args[1]), Double.parseDouble(args[2]), Unit.METRIC);
+        }
+        if (args.length == 4 && args[0].equalsIgnoreCase("imperial")) {
+            return calculate(Double.parseDouble(args[1]) * 12 + Double.parseDouble(args[2]),
+                    Double.parseDouble(args[3]), Unit.IMPERIAL);
+        }
+        throw new IllegalArgumentException("Usage: java com.example.bmi.BmiCalculator metric <height-cm> <weight-kg>
+"
+                + "       java com.example.bmi.BmiCalculator imperial <height-feet> <height-inches> <weight-lbs>");
+    }
 }
