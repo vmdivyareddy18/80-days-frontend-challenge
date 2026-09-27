@@ -1,5 +1,7 @@
 package com.example.bmi;
 
+import java.util.Locale;
+
 public final class BmiCalculator {
     private static final double MIN_METRIC_HEIGHT_CENTIMETERS = 50;
     private static final double MAX_METRIC_HEIGHT_CENTIMETERS = 280;
@@ -56,5 +58,17 @@ public final class BmiCalculator {
             return Category.OVERWEIGHT;
         }
         return Category.OBESE;
+    }
+
+    private static BmiResult calculate(double height, double weight, Unit unit) {
+        validateInput(unit, height, weight);
+        double bmi = unit == Unit.METRIC
+                ? calculateMetric(height, weight)
+                : calculateImperial(height, 0, weight);
+        return new BmiResult(bmi, determineCategory(bmi));
+    }
+
+    private static String formatResult(BmiResult result) {
+        return String.format(Locale.ROOT, "BMI: %.1f%nCategory: %s%n", result.bmi(), result.category());
     }
 }
