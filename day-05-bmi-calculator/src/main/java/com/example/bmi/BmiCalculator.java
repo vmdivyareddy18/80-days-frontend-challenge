@@ -19,4 +19,7 @@ public final class BmiCalculator {
         OVERWEIGHT,
         OBESE
     }
+
+    private record BmiResult(double bmi, Category category) {
+    }
 }
