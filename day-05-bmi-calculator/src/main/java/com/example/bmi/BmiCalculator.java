@@ -84,4 +84,13 @@ public final class BmiCalculator {
 "
                 + "       java com.example.bmi.BmiCalculator imperial <height-feet> <height-inches> <weight-lbs>");
     }
+
+    public static void main(String[] args) {
+        try {
+            System.out.print(formatResult(parseArguments(args)));
+        } catch (IllegalArgumentException exception) {
+            System.err.println(exception.getMessage());
+            System.exit(1);
+        }
+    }
 }
