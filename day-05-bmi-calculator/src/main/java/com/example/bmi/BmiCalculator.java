@@ -12,4 +12,11 @@ public final class BmiCalculator {
         METRIC,
         IMPERIAL
     }
+
+    private enum Category {
+        UNDERWEIGHT,
+        NORMAL,
+        OVERWEIGHT,
+        OBESE
+    }
 }
