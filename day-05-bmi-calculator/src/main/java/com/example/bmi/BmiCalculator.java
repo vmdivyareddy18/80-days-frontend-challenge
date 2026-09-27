@@ -84,13 +84,22 @@ public final class BmiCalculator {
         return String.format(Locale.ROOT, "BMI: %.1f%nCategory: %s%n", result.bmi(), result.category());
     }
 
+    private static double parseNumber(String value, String name) {
+        try {
+            return Double.parseDouble(value);
+        } catch (NumberFormatException exception) {
+            throw new IllegalArgumentException(name + " must be a number.", exception);
+        }
+    }
+
     private static BmiResult parseArguments(String[] args) {
         if (args.length == 3 && args[0].equalsIgnoreCase("metric")) {
-            return calculate(Double.parseDouble(args[1]), Double.parseDouble(args[2]), Unit.METRIC);
+            return calculate(parseNumber(args[1], "Height"), parseNumber(args[2], "Weight"), Unit.METRIC);
         }
         if (args.length == 4 && args[0].equalsIgnoreCase("imperial")) {
-            return calculate(Double.parseDouble(args[1]) * 12 + Double.parseDouble(args[2]),
-                    Double.parseDouble(args[3]), Unit.IMPERIAL);
+            double heightInches = parseNumber(args[1], "Height in feet") * INCHES_PER_FOOT
+                    + parseNumber(args[2], "Height in inches");
+            return calculate(heightInches, parseNumber(args[3], "Weight"), Unit.IMPERIAL);
         }
         throw new IllegalArgumentException("Usage: java com.example.bmi.BmiCalculator metric <height-cm> <weight-kg>\n"
                 + "       java com.example.bmi.BmiCalculator imperial <height-feet> <height-inches> <weight-lbs>");
