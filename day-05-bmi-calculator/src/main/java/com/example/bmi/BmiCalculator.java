@@ -80,8 +80,7 @@ public final class BmiCalculator {
             return calculate(Double.parseDouble(args[1]) * 12 + Double.parseDouble(args[2]),
                     Double.parseDouble(args[3]), Unit.IMPERIAL);
         }
-        throw new IllegalArgumentException("Usage: java com.example.bmi.BmiCalculator metric <height-cm> <weight-kg>
-"
+        throw new IllegalArgumentException("Usage: java com.example.bmi.BmiCalculator metric <height-cm> <weight-kg>\n"
                 + "       java com.example.bmi.BmiCalculator imperial <height-feet> <height-inches> <weight-lbs>");
     }
 
