@@ -31,4 +31,11 @@ public final class BmiCalculator {
         double heightMeters = heightCentimeters * METERS_PER_CENTIMETER;
         return weightKilograms / (heightMeters * heightMeters);
     }
+
+    private static double calculateImperial(double heightFeet, double heightInches, double weightPounds) {
+        double heightInchesTotal = heightFeet * INCHES_PER_FOOT + heightInches;
+        double heightMeters = heightInchesTotal * CENTIMETERS_PER_INCH / 100;
+        double weightKilograms = weightPounds / POUNDS_PER_KILOGRAM;
+        return weightKilograms / (heightMeters * heightMeters);
+    }
 }
