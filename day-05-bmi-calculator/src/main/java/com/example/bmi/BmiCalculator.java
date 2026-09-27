@@ -72,7 +72,7 @@ public final class BmiCalculator {
         return Category.OBESE;
     }
 
-    private static BmiResult calculate(double height, double weight, Unit unit) {
+    public static BmiResult calculate(double height, double weight, Unit unit) {
         validateInput(unit, height, weight);
         double bmi = unit == Unit.METRIC
                 ? calculateMetric(height, weight)
@@ -97,9 +97,11 @@ public final class BmiCalculator {
             return calculate(parseNumber(args[1], "Height"), parseNumber(args[2], "Weight"), Unit.METRIC);
         }
         if (args.length == 4 && args[0].equalsIgnoreCase("imperial")) {
-            double heightInches = parseNumber(args[1], "Height in feet") * INCHES_PER_FOOT
-                    + parseNumber(args[2], "Height in inches");
-            return calculate(heightInches, parseNumber(args[3], "Weight"), Unit.IMPERIAL);
+            double heightFeet = parseNumber(args[1], "Height in feet");
+            double heightInches = parseNumber(args[2], "Height in inches");
+            double weightPounds = parseNumber(args[3], "Weight");
+            double bmi = calculateImperial(heightFeet, heightInches, weightPounds);
+            return new BmiResult(bmi, determineCategory(bmi));
         }
         throw new IllegalArgumentException("Usage: java com.example.bmi.BmiCalculator metric <height-cm> <weight-kg>\n"
                 + "       java com.example.bmi.BmiCalculator imperial <height-feet> <height-inches> <weight-lbs>");
