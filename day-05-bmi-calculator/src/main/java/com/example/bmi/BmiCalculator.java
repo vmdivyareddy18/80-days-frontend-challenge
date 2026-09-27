@@ -38,4 +38,10 @@ public final class BmiCalculator {
         double weightKilograms = weightPounds / POUNDS_PER_KILOGRAM;
         return weightKilograms / (heightMeters * heightMeters);
     }
+
+    private static void validateInput(Unit unit, double height, double weight) {
+        if (!Double.isFinite(height) || !Double.isFinite(weight) || weight <= 0) {
+            throw new IllegalArgumentException("Height and weight must be valid numbers.");
+        }
+    }
 }
