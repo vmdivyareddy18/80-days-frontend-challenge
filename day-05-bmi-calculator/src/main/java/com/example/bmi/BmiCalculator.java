@@ -44,4 +44,17 @@ public final class BmiCalculator {
             throw new IllegalArgumentException("Height and weight must be valid numbers.");
         }
     }
+
+    private static Category determineCategory(double bmi) {
+        if (bmi < 18.5) {
+            return Category.UNDERWEIGHT;
+        }
+        if (bmi < 25) {
+            return Category.NORMAL;
+        }
+        if (bmi < 30) {
+            return Category.OVERWEIGHT;
+        }
+        return Category.OBESE;
+    }
 }
