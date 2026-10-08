@@ -16,6 +16,8 @@ java -cp out com.example.bmi.BmiCalculator imperial 5 9 154
 
 Run `java -cp out com.example.bmi.BmiCalculator --help` to display the available commands.
 
+Open `index.html` in a browser to use the responsive calculator interface.
+
 ## 🚀 Features
 - Metric & Imperial Unit Support
 - BMI Calculation
