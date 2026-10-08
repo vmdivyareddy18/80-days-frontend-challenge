@@ -89,8 +89,15 @@ function calculate() {
     document.getElementById('result-card').classList.add('show');
 }
 
-// Allow Enter key to trigger calculation
-document.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') calculate();
+// Submit the form with the Calculate BMI button or Enter key
+document.getElementById('bmi-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    calculate();
+});
+
+document.querySelectorAll('.unit-btn').forEach(function (button) {
+    button.addEventListener('click', function () {
+        setUnit(button.id === 'btn-imperial' ? 'imperial' : 'metric');
+    });
 });
 
