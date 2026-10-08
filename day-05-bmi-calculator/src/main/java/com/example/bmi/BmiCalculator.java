@@ -100,8 +100,8 @@ public final class BmiCalculator {
             double heightFeet = parseNumber(args[1], "Height in feet");
             double heightInches = parseNumber(args[2], "Height in inches");
             double weightPounds = parseNumber(args[3], "Weight");
-            double bmi = calculateImperial(heightFeet, heightInches, weightPounds);
-            return new BmiResult(bmi, determineCategory(bmi));
+            double totalInches = heightFeet * INCHES_PER_FOOT + heightInches;
+            return calculate(totalInches, weightPounds, Unit.IMPERIAL);
         }
         throw new IllegalArgumentException("Usage: java com.example.bmi.BmiCalculator metric <height-cm> <weight-kg>\n"
                 + "       java com.example.bmi.BmiCalculator imperial <height-feet> <height-inches> <weight-lbs>");
