@@ -76,7 +76,7 @@ public final class BmiCalculator {
         validateInput(unit, height, weight);
         double bmi = unit == Unit.METRIC
                 ? calculateMetric(height, weight)
-                : calculateImperial(height, 0, weight);
+                : calculateImperial(0, height, weight);
         return new BmiResult(bmi, determineCategory(bmi));
     }
 
