@@ -7,10 +7,14 @@ A responsive BMI (Body Mass Index) Calculator built using HTML, CSS, and JavaScr
 The Java implementation is dependency-free and can be compiled with the JDK.
 
 ```bash
-javac -d out src/main/java/com/example/bmi/BmiCalculator.java
+rm -rf out && mkdir -p out
+javac -d out src/main/java/com/example/bmi/BmiCalculator.java src/test/java/com/example/bmi/BmiCalculatorTest.java
+java -cp out com.example.bmi.BmiCalculatorTest
 java -cp out com.example.bmi.BmiCalculator metric 175 70
 java -cp out com.example.bmi.BmiCalculator imperial 5 9 154
 ```
+
+Run `java -cp out com.example.bmi.BmiCalculator --help` to display the available commands.
 
 ## 🚀 Features
 - Metric & Imperial Unit Support
