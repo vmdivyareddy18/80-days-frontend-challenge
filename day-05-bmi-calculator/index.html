@@ -8,16 +8,18 @@
 </head>
 
 <body>
-    <div class="card">
-        <h1>BMI Calculator</h1>
-        <p class="subtitle">Body Mass Index — based on height and weight.</p>
+    <main class="card">
+        <header>
+            <h1>BMI Calculator</h1>
+            <p class="subtitle">Body Mass Index — based on height and weight.</p>
+        </header>
 
-        <div class="unit-toggle">
+        <div class="unit-toggle" role="group" aria-label="Measurement units">
             <button class="unit-btn active" id="btn-metric" onclick="setUnit('metric')">Metric</button>
             <button class="unit-btn" id="btn-imperial" onclick="setUnit('imperial')">Imperial</button>
         </div>
 
-        <div class="fields">
+        <form class="fields" id="bmi-form">
             <!-- Metric Height -->
             <div class="field" id="field-height-metric">
                 <label>Height</label>
@@ -57,11 +59,11 @@
             </div>
         </div>
 
-        <p class="error" id="err-msg">⚠️ Please enter valid height and weight values.</p>
+        <p class="error" id="err-msg" role="alert">⚠️ Please enter valid height and weight values.</p>
 
-        <button class="calc-btn" onclick="calculate()">Calculate BMI</button>
+        <button class="calc-btn" type="submit">Calculate BMI</button>
 
-        <div class="result-card" id="result-card">
+        <section class="result-card" id="result-card" aria-live="polite" aria-labelledby="bmi-cat">
             <div class="bmi-row">
                 <span class="bmi-number" id="bmi-val">—</span>
                 <span class="bmi-unit">BMI</span>
@@ -108,7 +110,8 @@
                 </div>
             </div>
         </div>
-    </div>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 
