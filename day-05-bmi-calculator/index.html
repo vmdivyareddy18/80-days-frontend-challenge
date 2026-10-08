@@ -15,8 +15,10 @@
         </header>
 
         <div class="unit-toggle" role="group" aria-label="Measurement units">
-            <button class="unit-btn active" id="btn-metric" onclick="setUnit('metric')">Metric</button>
-            <button class="unit-btn" id="btn-imperial" onclick="setUnit('imperial')">Imperial</button>
+            <button class="unit-btn active" id="btn-metric" type="button" aria-pressed="true"
+                onclick="setUnit('metric')">Metric</button>
+            <button class="unit-btn" id="btn-imperial" type="button" aria-pressed="false"
+                onclick="setUnit('imperial')">Imperial</button>
         </div>
 
         <form class="fields" id="bmi-form">

@@ -22,8 +22,12 @@ function bmiToPercent(bmi) {
 function setUnit(unit) {
     mode = unit;
 
-    document.getElementById('btn-metric').classList.toggle('active', unit === 'metric');
-    document.getElementById('btn-imperial').classList.toggle('active', unit === 'imperial');
+    const metricButton = document.getElementById('btn-metric');
+    const imperialButton = document.getElementById('btn-imperial');
+    metricButton.classList.toggle('active', unit === 'metric');
+    imperialButton.classList.toggle('active', unit === 'imperial');
+    metricButton.setAttribute('aria-pressed', String(unit === 'metric'));
+    imperialButton.setAttribute('aria-pressed', String(unit === 'imperial'));
 
     document.getElementById('field-height-metric').style.display = unit === 'metric' ? '' : 'none';
     document.getElementById('field-height-imperial').style.display = unit === 'imperial' ? '' : 'none';
