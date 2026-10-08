@@ -45,7 +45,7 @@ function getMeasurements() {
         const cm = parseFloat(document.getElementById('height-cm').value);
         const kg = parseFloat(document.getElementById('weight-kg').value);
         if (!Number.isFinite(cm) || !Number.isFinite(kg)
-                || cm < 50 || cm > 280 || kg < 10 || kg > 500) {
+            || cm < 50 || cm > 280 || kg < 10 || kg > 500) {
             return null;
         }
         return { heightM: cm / 100, weightKg: kg };
@@ -56,7 +56,7 @@ function getMeasurements() {
     const lbs = parseFloat(document.getElementById('weight-lbs').value);
     const totalInches = ft * 12 + inch;
     if (!Number.isFinite(totalInches) || !Number.isFinite(lbs)
-            || totalInches < 20 || lbs < 22) {
+        || totalInches < 20 || lbs < 22) {
         return null;
     }
     return { heightM: totalInches * 0.0254, weightKg: lbs * 0.453592 };
@@ -86,6 +86,7 @@ function calculate() {
     document.getElementById('d-cat').textContent = cat.label;
     document.getElementById('d-bmi').textContent = bmiDisplay.toFixed(1);
     document.getElementById('d-status').textContent = cat.status;
+    document.getElementById('result-card').setAttribute('aria-live', 'polite');
 
     // Move gauge marker
     const marker = document.getElementById('bmi-marker');
