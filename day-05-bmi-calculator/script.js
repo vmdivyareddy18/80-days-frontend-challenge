@@ -36,36 +36,37 @@ function setUnit(unit) {
 }
 
 // ── Calculate ──────────────────────────────────────────
+function getMeasurements() {
+    if (mode === 'metric') {
+        const cm = parseFloat(document.getElementById('height-cm').value);
+        const kg = parseFloat(document.getElementById('weight-kg').value);
+        if (!cm || !kg || cm < 50 || cm > 280 || kg < 10 || kg > 500) {
+            return null;
+        }
+        return { heightM: cm / 100, weightKg: kg };
+    }
+
+    const ft = parseFloat(document.getElementById('height-ft').value) || 0;
+    const inch = parseFloat(document.getElementById('height-in').value) || 0;
+    const lbs = parseFloat(document.getElementById('weight-lbs').value);
+    const totalInches = ft * 12 + inch;
+    if (!totalInches || !lbs || totalInches < 20 || lbs < 22) {
+        return null;
+    }
+    return { heightM: totalInches * 0.0254, weightKg: lbs * 0.453592 };
+}
+
 function calculate() {
     const err = document.getElementById('err-msg');
     err.style.display = 'none';
 
-    let heightM, weightKg;
-
-    if (mode === 'metric') {
-        const cm = parseFloat(document.getElementById('height-cm').value);
-        const kg = parseFloat(document.getElementById('weight-kg').value);
-
-        if (!cm || !kg || cm < 50 || cm > 280 || kg < 10 || kg > 500) {
-            err.style.display = 'block';
-            return;
-        }
-        heightM = cm / 100;
-        weightKg = kg;
-
-    } else {
-        const ft = parseFloat(document.getElementById('height-ft').value) || 0;
-        const inch = parseFloat(document.getElementById('height-in').value) || 0;
-        const lbs = parseFloat(document.getElementById('weight-lbs').value);
-        const totalInches = ft * 12 + inch;
-
-        if (!totalInches || !lbs || totalInches < 20 || lbs < 22) {
-            err.style.display = 'block';
-            return;
-        }
-        heightM = totalInches * 0.0254;
-        weightKg = lbs * 0.453592;
+    const measurements = getMeasurements();
+    if (!measurements) {
+        err.style.display = 'block';
+        return;
     }
+
+    const { heightM, weightKg } = measurements;
 
     // BMI = weight(kg) / height(m)²
     const bmi = weightKg / (heightM * heightM);
