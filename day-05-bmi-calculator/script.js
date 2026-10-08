@@ -44,7 +44,8 @@ function getMeasurements() {
     if (mode === 'metric') {
         const cm = parseFloat(document.getElementById('height-cm').value);
         const kg = parseFloat(document.getElementById('weight-kg').value);
-        if (!cm || !kg || cm < 50 || cm > 280 || kg < 10 || kg > 500) {
+        if (!Number.isFinite(cm) || !Number.isFinite(kg)
+                || cm < 50 || cm > 280 || kg < 10 || kg > 500) {
             return null;
         }
         return { heightM: cm / 100, weightKg: kg };
@@ -54,7 +55,8 @@ function getMeasurements() {
     const inch = parseFloat(document.getElementById('height-in').value) || 0;
     const lbs = parseFloat(document.getElementById('weight-lbs').value);
     const totalInches = ft * 12 + inch;
-    if (!totalInches || !lbs || totalInches < 20 || lbs < 22) {
+    if (!Number.isFinite(totalInches) || !Number.isFinite(lbs)
+            || totalInches < 20 || lbs < 22) {
         return null;
     }
     return { heightM: totalInches * 0.0254, weightKg: lbs * 0.453592 };
