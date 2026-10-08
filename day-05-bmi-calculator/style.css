@@ -288,12 +288,31 @@ input[type="number"].small {
 }
 
 /* Responsive */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
+    body {
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 1.75rem 1.25rem;
+    }
+
     .fields {
         grid-template-columns: 1fr;
     }
 
-    .card {
-        padding: 2rem 1.25rem;
+    .bmi-number {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 320px) {
+    .input-row {
+        flex-wrap: wrap;
+    }
+
+    .input-row input[type="number"] {
+        min-width: 0;
     }
 }
