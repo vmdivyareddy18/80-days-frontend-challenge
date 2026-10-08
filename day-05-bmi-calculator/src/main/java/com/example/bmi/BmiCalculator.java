@@ -14,19 +14,19 @@ public final class BmiCalculator {
     private static final double INCHES_PER_FOOT = 12;
     private static final double CENTIMETERS_PER_INCH = 2.54;
 
-    private enum Unit {
+    public enum Unit {
         METRIC,
         IMPERIAL
     }
 
-    private enum Category {
+    public enum Category {
         UNDERWEIGHT,
         NORMAL,
         OVERWEIGHT,
         OBESE
     }
 
-    private record BmiResult(double bmi, Category category) {
+    public record BmiResult(double bmi, Category category) {
     }
 
     private static double calculateMetric(double heightCentimeters, double weightKilograms) {
