@@ -108,6 +108,12 @@ public final class BmiCalculator {
     }
 
     public static void main(String[] args) {
+        if (args.length == 1 && args[0].equalsIgnoreCase("--help")) {
+            System.out.println("Usage: java com.example.bmi.BmiCalculator metric <height-cm> <weight-kg>\n"
+                    + "       java com.example.bmi.BmiCalculator imperial <height-feet> <height-inches> <weight-lbs>");
+            return;
+        }
+
         try {
             System.out.print(formatResult(parseArguments(args)));
         } catch (IllegalArgumentException exception) {
