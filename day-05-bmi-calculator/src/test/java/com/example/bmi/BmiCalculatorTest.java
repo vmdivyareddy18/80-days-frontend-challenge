@@ -33,6 +33,12 @@ public final class BmiCalculatorTest {
                 BmiCalculator.calculate(175, 80, BmiCalculator.Unit.METRIC).category());
         assertEquals(BmiCalculator.Category.OBESE,
                 BmiCalculator.calculate(175, 100, BmiCalculator.Unit.METRIC).category());
+        assertEquals(BmiCalculator.Category.NORMAL,
+            BmiCalculator.calculate(100, 18.5, BmiCalculator.Unit.METRIC).category());
+        assertEquals(BmiCalculator.Category.OVERWEIGHT,
+            BmiCalculator.calculate(100, 25, BmiCalculator.Unit.METRIC).category());
+        assertEquals(BmiCalculator.Category.OBESE,
+            BmiCalculator.calculate(100, 30, BmiCalculator.Unit.METRIC).category());
     }
 
     private static void testInvalidInputs() {
