@@ -78,7 +78,7 @@ function calculate() {
     // BMI = weight(kg) / height(m)²
     const bmi = weightKg / (heightM * heightM);
     const bmiDisplay = parseFloat(bmi.toFixed(1));
-    const cat = getCategory(bmiDisplay);
+    const cat = getCategory(bmi);
 
     // Update DOM
     document.getElementById('bmi-val').textContent = bmiDisplay.toFixed(1);
