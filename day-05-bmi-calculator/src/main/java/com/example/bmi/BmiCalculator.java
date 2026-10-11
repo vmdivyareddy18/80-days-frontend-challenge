@@ -42,6 +42,9 @@ public final class BmiCalculator {
     }
 
     private static void validateInput(Unit unit, double height, double weight) {
+        if (unit == null) {
+            throw new IllegalArgumentException("Unit must be metric or imperial.");
+        }
         if (!Double.isFinite(height) || !Double.isFinite(weight) || weight <= 0) {
             throw new IllegalArgumentException("Height and weight must be valid numbers.");
         }
