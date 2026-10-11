@@ -57,7 +57,7 @@ function getMeasurements() {
     const totalInches = ft * 12 + inch;
     if (!Number.isFinite(ft) || ft < 1 || ft > 9
         || !Number.isFinite(inch) || inch < 0 || inch > 11
-        || !Number.isFinite(lbs) || totalInches < 20 || lbs < 22) {
+        || !Number.isFinite(lbs) || totalInches < 20 || lbs < 22 || lbs > 1100) {
         return null;
     }
     return { heightM: totalInches * 0.0254, weightKg: lbs * 0.453592 };
