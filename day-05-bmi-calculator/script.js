@@ -51,12 +51,13 @@ function getMeasurements() {
         return { heightM: cm / 100, weightKg: kg };
     }
 
-    const ft = parseFloat(document.getElementById('height-ft').value) || 0;
-    const inch = parseFloat(document.getElementById('height-in').value) || 0;
+    const ft = parseFloat(document.getElementById('height-ft').value);
+    const inch = parseFloat(document.getElementById('height-in').value);
     const lbs = parseFloat(document.getElementById('weight-lbs').value);
     const totalInches = ft * 12 + inch;
-    if (!Number.isFinite(totalInches) || !Number.isFinite(lbs)
-        || totalInches < 20 || lbs < 22) {
+    if (!Number.isFinite(ft) || ft < 1 || ft > 9
+        || !Number.isFinite(inch) || inch < 0 || inch > 11
+        || !Number.isFinite(lbs) || totalInches < 20 || lbs < 22) {
         return null;
     }
     return { heightM: totalInches * 0.0254, weightKg: lbs * 0.453592 };
