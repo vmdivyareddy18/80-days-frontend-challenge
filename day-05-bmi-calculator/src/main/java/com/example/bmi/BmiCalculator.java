@@ -60,7 +60,7 @@ public final class BmiCalculator {
         if (unit == Unit.IMPERIAL && (height < MIN_IMPERIAL_HEIGHT_INCHES
                 || height > MAX_IMPERIAL_HEIGHT_INCHES
             || weight < MIN_IMPERIAL_WEIGHT_POUNDS || weight > MAX_IMPERIAL_WEIGHT_POUNDS)) {
-            throw new IllegalArgumentException("Imperial height must be 20-111 inches and weight 10-500 kg.");
+            throw new IllegalArgumentException("Imperial height must be 20-111 inches and weight 22-1100 lb.");
         }
     }
 
