@@ -104,6 +104,10 @@ document.getElementById('bmi-form').addEventListener('submit', function (event) 
     calculate();
 });
 
+document.getElementById('bmi-form').addEventListener('input', function () {
+    document.getElementById('err-msg').style.display = 'none';
+});
+
 document.querySelectorAll('.unit-btn').forEach(function (button) {
     button.addEventListener('click', function () {
         setUnit(button.id === 'btn-imperial' ? 'imperial' : 'metric');
