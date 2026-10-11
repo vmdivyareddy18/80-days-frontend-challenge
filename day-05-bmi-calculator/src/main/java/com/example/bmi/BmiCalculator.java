@@ -7,8 +7,10 @@ public final class BmiCalculator {
     private static final double MAX_METRIC_HEIGHT_CENTIMETERS = 280;
     private static final double MIN_IMPERIAL_HEIGHT_INCHES = 20;
     private static final double MAX_IMPERIAL_HEIGHT_INCHES = 111;
-    private static final double MIN_WEIGHT = 10;
-    private static final double MAX_WEIGHT = 500;
+    private static final double MIN_METRIC_WEIGHT_KILOGRAMS = 10;
+    private static final double MAX_METRIC_WEIGHT_KILOGRAMS = 500;
+    private static final double MIN_IMPERIAL_WEIGHT_POUNDS = 22;
+    private static final double MAX_IMPERIAL_WEIGHT_POUNDS = 1100;
     private static final double METERS_PER_CENTIMETER = 0.01;
     private static final double POUNDS_PER_KILOGRAM = 2.20462262185;
     private static final double INCHES_PER_FOOT = 12;
@@ -51,13 +53,13 @@ public final class BmiCalculator {
 
         if (unit == Unit.METRIC && (height < MIN_METRIC_HEIGHT_CENTIMETERS
                 || height > MAX_METRIC_HEIGHT_CENTIMETERS
-                || weight < MIN_WEIGHT || weight > MAX_WEIGHT)) {
+            || weight < MIN_METRIC_WEIGHT_KILOGRAMS || weight > MAX_METRIC_WEIGHT_KILOGRAMS)) {
             throw new IllegalArgumentException("Metric height must be 50-280 cm and weight 10-500 kg.");
         }
 
         if (unit == Unit.IMPERIAL && (height < MIN_IMPERIAL_HEIGHT_INCHES
                 || height > MAX_IMPERIAL_HEIGHT_INCHES
-                || weight < MIN_WEIGHT || weight > MAX_WEIGHT)) {
+            || weight < MIN_IMPERIAL_WEIGHT_POUNDS || weight > MAX_IMPERIAL_WEIGHT_POUNDS)) {
             throw new IllegalArgumentException("Imperial height must be 20-111 inches and weight 10-500 kg.");
         }
     }
