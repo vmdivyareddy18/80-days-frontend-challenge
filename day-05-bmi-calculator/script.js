@@ -69,6 +69,7 @@ function calculate() {
 
     const measurements = getMeasurements();
     if (!measurements) {
+        document.getElementById('result-card').classList.remove('show');
         err.style.display = 'block';
         return;
     }
