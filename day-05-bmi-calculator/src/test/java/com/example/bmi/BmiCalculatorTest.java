@@ -39,6 +39,8 @@ public final class BmiCalculatorTest {
         expectInvalid(() -> BmiCalculator.calculate(0, 70, BmiCalculator.Unit.METRIC));
         expectInvalid(() -> BmiCalculator.calculate(175, 0, BmiCalculator.Unit.METRIC));
         expectInvalid(() -> BmiCalculator.calculate(0, 154, BmiCalculator.Unit.IMPERIAL));
+        expectInvalid(() -> BmiCalculator.calculate(69, 10, BmiCalculator.Unit.IMPERIAL));
+        expectInvalid(() -> BmiCalculator.calculate(69, 1101, BmiCalculator.Unit.IMPERIAL));
         expectInvalid(() -> BmiCalculator.calculate(175, 70, null));
     }
 
